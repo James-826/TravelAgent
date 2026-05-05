@@ -1,0 +1,2 @@
+"""Smart travel assistant backend."""
+
