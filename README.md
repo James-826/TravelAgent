@@ -1,5 +1,7 @@
 # 智能旅行助手
 
+在线体验：http://47.95.124.109:8000/travel/ 。部署与能力范围见 [Aliyun 部署说明](deploy/ALIYUN.md)。
+
 一个前后端分离的智能旅行助手示例项目。后端使用 FastAPI、Pydantic 和异步多 Agent 编排；前端使用 Vue 3、TypeScript、Vite、Ant Design Vue、Axios、Vue Router、AMap JSAPI、html2canvas 和 jsPDF。
 
 ## 项目结构

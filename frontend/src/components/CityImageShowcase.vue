@@ -27,7 +27,7 @@
         </a>
         on Unsplash
       </span>
-      <span v-else>Unsplash API 城市图片展示</span>
+      <span v-else>从一个目的地，开始你的旅程</span>
     </div>
   </section>
 </template>
@@ -52,7 +52,7 @@ const emptyText = computed(() => {
     return '输入城市后将展示对应的旅行头图。'
   }
   if (!props.image.configured) {
-    return '请在 backend/.env 中填写 UNSPLASH_ACCESS_KEY 后刷新页面。'
+    return '城市图片暂未接入，不影响行程规划。'
   }
   return props.image.alt_description || '暂未获取到城市图片。'
 })

@@ -14,9 +14,9 @@
         <h3>{{ emptyTitle }}</h3>
         <p>{{ emptyDescription }}</p>
         <div class="map-config-list">
-          <span :class="{ ready: hasWebKey }">VITE_AMAP_KEY</span>
-          <span :class="{ ready: hasSecurityCode }">VITE_AMAP_SECURITY_JS_CODE</span>
-          <span :class="{ ready: hasGeoPoints }">route_points 经纬度：{{ points.length }} 个</span>
+          <span :class="{ ready: hasWebKey }">地图服务</span>
+          <span :class="{ ready: hasSecurityCode }">访问配置</span>
+          <span :class="{ ready: hasGeoPoints }">路线点位：{{ points.length }} 个</span>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@ const statusText = computed(() => {
     return '已加载'
   }
   if (!hasWebKey.value) {
-    return '缺少 Web Key'
+    return '暂未接入'
   }
   if (!hasGeoPoints.value) {
     return '等待坐标'
@@ -87,20 +87,20 @@ const statusColor = computed(() => {
 
 const emptyTitle = computed(() => {
   if (!hasWebKey.value) {
-    return '需要高德 Web端(JS API) Key'
+    return '地图预览暂不可用'
   }
   if (!hasGeoPoints.value) {
-    return '等待高德 MCP 返回经纬度'
+    return '暂未获取路线坐标'
   }
   return '地图即将加载'
 })
 
 const emptyDescription = computed(() => {
   if (!hasWebKey.value) {
-    return '请在 frontend/.env 填写 VITE_AMAP_KEY；如果使用 JS API 2.0 安全密钥，也填写 VITE_AMAP_SECURITY_JS_CODE。'
+    return '可以先查看每日行程；实际路线请在地图应用中核实。'
   }
   if (!hasGeoPoints.value) {
-    return '后端会通过高德 MCP 和 POI 详情接口补全路线点位坐标。'
+    return '暂无可展示的准确点位，请按地点名称自行查询。'
   }
   return '正在加载高德地图组件。'
 })

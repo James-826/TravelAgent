@@ -44,7 +44,7 @@
           <p class="eyebrow">Start Here</p>
           <h2>创建行程</h2>
         </div>
-        <a-tag color="default">FastAPI + Vue 3</a-tag>
+        <a-tag color="default">定制你的旅行</a-tag>
       </div>
 
       <a-form layout="vertical" :model="form" @finish="$emit('submit')">

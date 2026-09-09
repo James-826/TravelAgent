@@ -20,7 +20,7 @@
             </div>
           </div>
           <a-alert
-            v-for="item in [...plan.assumptions, ...plan.warnings]"
+            v-for="item in [...new Set([...agents.flatMap(agent => agent.warnings), ...plan.assumptions, ...plan.warnings])]"
             :key="item"
             type="info"
             show-icon
